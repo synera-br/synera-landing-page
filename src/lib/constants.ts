@@ -222,6 +222,14 @@ export const PROJECTS_DATA: Project[] = [
     technologies: ['IA', 'Google Gemini', 'Chatbot', 'Genkit'],
     image: 'https://placehold.co/600x400.png',
     dataAiHint: 'ai chatbot'
+  },
+  {
+    id: 'project6',
+    name: 'Plataforma de Engenharia com Backstage',
+    description: 'Desenvolvimento de uma plataforma de engenharia centralizada com Backstage, integrando Kubernetes, ArgoCD, Vault, pipelines CI/CD e outras ferramentas para otimizar o fluxo de desenvolvimento e operações.',
+    technologies: ['Platform Engineering', 'Backstage', 'Kubernetes', 'ArgoCD', 'Vault', 'Pipelines CI/CD', 'DevOps'],
+    image: 'https://placehold.co/600x400.png',
+    dataAiHint: 'developer portal'
   }
 ];
 
@@ -278,3 +286,4 @@ export const FOOTER_TEXT = `© ${new Date().getFullYear()} Synera Solutions Hub.
 
 
     
+
