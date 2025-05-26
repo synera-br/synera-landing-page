@@ -1,5 +1,6 @@
+
 import type { LucideIcon } from 'lucide-react';
-import { Briefcase, BoxIcon, Blocks, Layers, GitFork, ShieldCheck, GitMerge, Workflow, MessageCircle, Rocket, Settings, BarChart3 } from 'lucide-react';
+import { Briefcase, BoxIcon, Blocks, Layers, GitFork, ShieldCheck, GitMerge, Workflow, MessageCircle, Rocket, Settings, BarChart3, ServerCog, TerminalSquare } from 'lucide-react';
 
 export const WHATSAPP_NUMBER = "51984104084";
 export const WHATSAPP_BASE_URL = "https://wa.me/";
@@ -138,6 +139,22 @@ export const SERVICES_DATA: Service[] = [
         { title: "Segurança em Pipelines (DevSecOps)", content: "Incorporação de práticas de segurança em todas as etapas do pipeline."}
     ]
   },
+  {
+    id: 'iac',
+    slug: 'infraestrutura-como-codigo',
+    name: 'Infraestrutura como Código (IaC)',
+    shortDescription: 'Automatize e gerencie sua infraestrutura com Terraform e Ansible.',
+    longDescription: 'Adote a Infraestrutura como Código para provisionar e configurar seus ambientes de forma programática, garantindo consistência, velocidade e confiabilidade. Utilizamos Terraform para provisionamento declarativo e Ansible para gerenciamento de configuração robusto.',
+    icon: ServerCog, 
+    image: 'https://placehold.co/1200x600.png',
+    dataAiHint: 'infrastructure code',
+    details: [
+      { title: "Provisionamento Declarativo com Terraform", content: "Utilizamos Terraform para definir e provisionar sua infraestrutura de forma declarativa, garantindo consistência e reprodutibilidade em ambientes de nuvem ou on-premise."},
+      { title: "Gerenciamento de Configuração com Ansible", content: "Empregamos Ansible para automatizar o gerenciamento de configuração, orquestração de aplicações e provisionamento de software, simplificando a administração de sistemas complexos."},
+      { title: "Automação de Ambientes Completos", content: "Combinamos Terraform e Ansible para criar soluções completas de automação de infraestrutura, desde o provisionamento de recursos até a configuração final de aplicações."},
+      { title: "Templates Reutilizáveis e Boas Práticas", content: "Desenvolvemos módulos e playbooks reutilizáveis, seguindo as melhores práticas de IaC para otimizar seus processos."}
+    ]
+  }
 ];
 
 export interface Project {
@@ -162,7 +179,7 @@ export const PROJECTS_DATA: Project[] = [
     id: 'project2',
     name: 'Automação de Infraestrutura para Fintech',
     description: 'Implementação de Platform Engineering e CI/CD completo com ArgoCD, reduzindo o tempo de deploy em 80% e aumentando a confiabilidade.',
-    technologies: ['Platform Engineering', 'ArgoCD', 'Pipelines', 'DevOps'],
+    technologies: ['Platform Engineering', 'ArgoCD', 'Pipelines', 'DevOps', 'Terraform', 'Ansible'],
     image: 'https://placehold.co/600x400.png',
     dataAiHint: 'fintech infrastructure'
   },
@@ -194,6 +211,7 @@ export const SERVICE_ICONS = {
   sre: ShieldCheck,
   argocd: GitMerge,
   pipelines: Workflow,
+  iac: ServerCog, // Icon for Infrastructure as Code
   default: BarChart3 // A generic icon if needed
 };
 
@@ -232,3 +250,6 @@ export const AI_ADVISOR_SECTION_DESCRIPTION = "Descreva suas necessidades e noss
 export const ABOUT_US_SECTION_TITLE = "Sobre a Synera";
 
 export const FOOTER_TEXT = `© ${new Date().getFullYear()} Synera Solutions Hub. Todos os direitos reservados.`;
+
+
+    
