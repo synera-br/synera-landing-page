@@ -1,4 +1,4 @@
-# **App Name**: Synera Solutions Hub
+# **App Name**: Synera Solutions
 
 ## Core Features:
 

@@ -12,7 +12,7 @@ export function HeroSection() {
         layout="fill"
         objectFit="cover"
         quality={80}
-        className="opacity-40 z-0"
+        className="opacity-50 z-0"
         data-ai-hint={HERO_IMAGE_HINT}
         priority
       />

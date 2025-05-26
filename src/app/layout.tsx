@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   title: `${COMPANY_FULL_NAME} - Consultoria em Tecnologia`,
   description: `Synera: ${COMPANY_MISSION} Especializada em Kubernetes, Microserviços, Platform Engineering, DevOps, SRE, ArgoCD e Pipelines.`,
   keywords: ["Synera", "Consultoria Tecnologia", "Kubernetes", "Microserviços", "Platform Engineering", "DevOps", "SRE", "ArgoCD", "Pipelines", "Tech Solutions", "Transformação Digital"],
-  authors: [{ name: "Synera Solutions Hub" }],
+  authors: [{ name: "Synera Solutions" }],
   openGraph: {
     title: `${COMPANY_FULL_NAME} - Consultoria em Tecnologia`,
     description: `Synera: ${COMPANY_MISSION}`,

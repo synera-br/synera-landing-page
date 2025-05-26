@@ -183,33 +183,33 @@ export interface Project {
 }
 
 export const PROJECTS_DATA: Project[] = [
-  {
-    id: 'project1',
-    name: 'Modernização de Plataforma E-commerce',
-    description: 'Migração de um monolito para arquitetura de microserviços em Kubernetes, resultando em maior escalabilidade e agilidade nos deploys.',
-    technologies: ['Kubernetes', 'Microserviços', 'DevOps'],
-    image: 'https://placehold.co/600x400.png',
-    dataAiHint: 'ecommerce platform'
-  },
+  // {
+  //   id: 'project1',
+  //   name: 'Modernização de Plataforma E-commerce',
+  //   description: 'Migração de um monolito para arquitetura de microserviços em Kubernetes, resultando em maior escalabilidade e agilidade nos deploys.',
+  //   technologies: ['Kubernetes', 'Microserviços', 'DevOps'],
+  //   image: 'https://placehold.co/600x400.png',
+  //   dataAiHint: 'ecommerce platform'
+  // },
   {
     id: 'project2',
-    name: 'Automação de Infraestrutura para Fintech',
+    name: 'Automação de Infraestrutura',
     description: 'Implementação de Platform Engineering e CI/CD completo com ArgoCD, reduzindo o tempo de deploy em 80% e aumentando a confiabilidade.',
     technologies: ['Platform Engineering', 'ArgoCD', 'Pipelines', 'DevOps', 'Terraform', 'Ansible'],
-    image: 'https://placehold.co/600x400.png',
+    image: '/last.jpg',
     dataAiHint: 'fintech infrastructure'
   },
   {
     id: 'project3',
-    name: 'Consultoria SRE para SaaS Global',
+    name: 'Consultoria SRE',
     description: 'Aumento da disponibilidade do sistema para 99.99% e otimização de custos através da implementação de práticas SRE e monitoramento avançado.',
     technologies: ['SRE', 'Kubernetes', 'Monitoramento'],
-    image: 'https://placehold.co/600x400.png',
+    image: '/sre-consulting.jpeg',
     dataAiHint: 'saas reliability'
   },
    {
     id: 'project4',
-    name: 'Implementação de Kubernetes para Startup de IA',
+    name: 'Implementação de Kubernetes em Cloud com IA',
     description: 'Criação de um cluster Kubernetes robusto para suportar cargas de trabalho de Machine Learning, otimizando o uso de GPUs.',
     technologies: ['Kubernetes', 'IA/ML', 'Platform Engineering'],
     image: 'https://placehold.co/600x400.png',
@@ -217,7 +217,7 @@ export const PROJECTS_DATA: Project[] = [
   },
   {
     id: 'project5',
-    name: 'Desenvolvimento de Agente de Atendimento com Gemini',
+    name: 'Desenvolvimento de Agente AI para Atendimento com Gemini',
     description: 'Criação de um chatbot avançado utilizando Google Gemini para automatizar o atendimento ao cliente de uma varejista, melhorando o tempo de resposta e a satisfação.',
     technologies: ['IA', 'Google Gemini', 'Chatbot', 'Genkit'],
     image: 'https://placehold.co/600x400.png',
@@ -252,7 +252,7 @@ export const SERVICE_ICONS = {
 export const CONTACT_BUTTON_ICON = MessageCircle;
 
 export const COMPANY_NAME = "Synera";
-export const COMPANY_FULL_NAME = "Synera Solutions Hub";
+export const COMPANY_FULL_NAME = "Synera Solutions";
 export const COMPANY_MISSION = "Transformando desafios tecnológicos em soluções inovadoras e eficientes.";
 export const COMPANY_VALUES = [
   "Inovação Contínua",
@@ -263,7 +263,7 @@ export const COMPANY_VALUES = [
 ];
 export const ABOUT_US_TEXT_PARAGRAPH_1 = "Na Synera, somos apaixonados por tecnologia e por como ela pode transformar negócios. Nossa equipe de especialistas combina conhecimento profundo com uma abordagem prática para entregar soluções que não apenas resolvem problemas, mas também abrem novas oportunidades de crescimento e eficiência.";
 export const ABOUT_US_TEXT_PARAGRAPH_2 = "Com foco em tecnologias de ponta como Kubernetes, Microserviços, Platform Engineering e práticas DevOps/SRE, ajudamos empresas de todos os tamanhos a modernizar suas operações, acelerar a inovação e construir um futuro digital resiliente e escalável.";
-export const ABOUT_US_IMAGE_URL = "https://placehold.co/800x600.png";
+export const ABOUT_US_IMAGE_URL = "/about.jpg";
 export const ABOUT_US_IMAGE_HINT = "team collaboration";
 
 export const HERO_TITLE = "Inovação e Expertise em Soluções Tecnológicas";
@@ -282,7 +282,7 @@ export const AI_ADVISOR_SECTION_DESCRIPTION = "Descreva suas necessidades e noss
 
 export const ABOUT_US_SECTION_TITLE = "Sobre a Synera";
 
-export const FOOTER_TEXT = `© ${new Date().getFullYear()} Synera Solutions Hub. Todos os direitos reservados.`;
+export const FOOTER_TEXT = `© ${new Date().getFullYear()} Synera Solutions. Todos os direitos reservados.`;
 
 
     
