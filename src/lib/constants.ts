@@ -1,6 +1,6 @@
 
 import type { LucideIcon } from 'lucide-react';
-import { Briefcase, BoxIcon, Blocks, Layers, GitFork, ShieldCheck, GitMerge, Workflow, MessageCircle, Rocket, Settings, BarChart3, ServerCog, TerminalSquare } from 'lucide-react';
+import { Briefcase, BoxIcon, Blocks, Layers, GitFork, ShieldCheck, GitMerge, Workflow, MessageCircle, Rocket, Settings, BarChart3, ServerCog, TerminalSquare, Brain } from 'lucide-react';
 
 export const WHATSAPP_NUMBER = "51984104084";
 export const WHATSAPP_BASE_URL = "https://wa.me/";
@@ -154,6 +154,22 @@ export const SERVICES_DATA: Service[] = [
       { title: "Automação de Ambientes Completos", content: "Combinamos Terraform e Ansible para criar soluções completas de automação de infraestrutura, desde o provisionamento de recursos até a configuração final de aplicações."},
       { title: "Templates Reutilizáveis e Boas Práticas", content: "Desenvolvemos módulos e playbooks reutilizáveis, seguindo as melhores práticas de IaC para otimizar seus processos."}
     ]
+  },
+  {
+    id: 'ai-agents-gemini',
+    slug: 'agentes-ia-gemini',
+    name: 'Agentes de IA com Gemini',
+    shortDescription: 'Desenvolvemos agentes de IA personalizados utilizando o poder do Google Gemini.',
+    longDescription: 'Criamos soluções de Inteligência Artificial sob medida, desde chatbots inteligentes e assistentes virtuais até sistemas complexos de análise de dados e automação de processos, utilizando os modelos avançados do Google Gemini. Potencialize seu negócio com IA de última geração.',
+    icon: Brain, 
+    image: 'https://placehold.co/1200x600.png',
+    dataAiHint: 'artificial intelligence brain',
+    details: [
+      { title: "Desenvolvimento de Chatbots e Assistentes Virtuais", content: "Criação de interfaces conversacionais inteligentes com Gemini para atendimento ao cliente, suporte técnico e engajamento de usuários."},
+      { title: "Automação Inteligente de Processos (IPA)", content: "Utilização de Gemini para automatizar tarefas repetitivas e complexas, otimizando fluxos de trabalho e aumentando a eficiência operacional."},
+      { title: "Análise Avançada de Dados e Insights", content: "Aplicação de modelos Gemini para extrair informações valiosas de grandes volumes de dados, gerando insights para tomada de decisão estratégica."},
+      { title: "Integração de IA em Aplicações Existentes", content: "Incorporamos capacidades de IA baseadas em Gemini em seus sistemas e plataformas atuais, agregando inteligência e novas funcionalidades."}
+    ]
   }
 ];
 
@@ -198,6 +214,14 @@ export const PROJECTS_DATA: Project[] = [
     technologies: ['Kubernetes', 'IA/ML', 'Platform Engineering'],
     image: 'https://placehold.co/600x400.png',
     dataAiHint: 'ai startup'
+  },
+  {
+    id: 'project5',
+    name: 'Desenvolvimento de Agente de Atendimento com Gemini',
+    description: 'Criação de um chatbot avançado utilizando Google Gemini para automatizar o atendimento ao cliente de uma varejista, melhorando o tempo de resposta e a satisfação.',
+    technologies: ['IA', 'Google Gemini', 'Chatbot', 'Genkit'],
+    image: 'https://placehold.co/600x400.png',
+    dataAiHint: 'ai chatbot'
   }
 ];
 
@@ -212,6 +236,7 @@ export const SERVICE_ICONS = {
   argocd: GitMerge,
   pipelines: Workflow,
   iac: ServerCog, // Icon for Infrastructure as Code
+  'ai-agents-gemini': Brain, // Icon for AI Agents
   default: BarChart3 // A generic icon if needed
 };
 
