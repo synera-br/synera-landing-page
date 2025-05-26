@@ -260,7 +260,7 @@ export const ABOUT_US_IMAGE_HINT = "team collaboration";
 
 export const HERO_TITLE = "Inovação e Expertise em Soluções Tecnológicas";
 export const HERO_SUBTITLE = "Na Synera, capacitamos seu negócio com consultoria e implementação de tecnologias de ponta, desde Kubernetes e Microserviços até Platform Engineering e SRE.";
-export const HERO_IMAGE_URL = "https://placehold.co/1920x1080.png";
+export const HERO_IMAGE_URL = "/slider-bg2.jpg";
 export const HERO_IMAGE_HINT = "modern cityscape";
 
 export const SERVICES_SECTION_TITLE = "Nossos Serviços";
