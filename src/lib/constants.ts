@@ -2,7 +2,7 @@
 import type { LucideIcon } from 'lucide-react';
 import { Briefcase, BoxIcon, Blocks, Layers, GitFork, ShieldCheck, GitMerge, Workflow, MessageCircle, Rocket, Settings, BarChart3, ServerCog, TerminalSquare, Brain } from 'lucide-react';
 
-export const WHATSAPP_NUMBER = "51984104084";
+export const WHATSAPP_NUMBER = "5551984104084";
 export const WHATSAPP_BASE_URL = "https://wa.me/";
 export const DEFAULT_WHATSAPP_MESSAGE = "Olá! Gostaria de saber mais sobre os serviços da Synera.";
 
@@ -71,7 +71,7 @@ export const SERVICES_DATA: Service[] = [
     shortDescription: 'Construímos plataformas internas para acelerar o desenvolvimento.',
     longDescription: 'Criamos plataformas de desenvolvedor internas (IDPs) que fornecem as ferramentas e os processos necessários para que suas equipes de engenharia construam e entreguem software de forma rápida e confiável.',
     icon: Layers,
-    image: 'https://placehold.co/1200x600.png',
+    image: '/platform.png',
     dataAiHint: 'developer platform',
     details: [
         { title: "Design de Plataformas Internas (IDP)", content: "Desenvolvimento de Internal Developer Platforms customizadas para as necessidades da sua equipe."},
@@ -204,7 +204,7 @@ export const PROJECTS_DATA: Project[] = [
     name: 'Consultoria SRE',
     description: 'Aumento da disponibilidade do sistema para 99.99% e otimização de custos através da implementação de práticas SRE e monitoramento avançado.',
     technologies: ['SRE', 'Kubernetes', 'Monitoramento'],
-    image: '/sre-consulting.jpeg',
+    image: '/sre-platform.drawio.png',
     dataAiHint: 'saas reliability'
   },
    {
@@ -212,7 +212,7 @@ export const PROJECTS_DATA: Project[] = [
     name: 'Implementação de Kubernetes em Cloud com IA',
     description: 'Criação de um cluster Kubernetes robusto para suportar cargas de trabalho de Machine Learning, otimizando o uso de GPUs.',
     technologies: ['Kubernetes', 'IA/ML', 'Platform Engineering'],
-    image: 'https://placehold.co/600x400.png',
+    image: '/What-is-Kubernetes.png',
     dataAiHint: 'ai startup'
   },
   {
@@ -220,7 +220,7 @@ export const PROJECTS_DATA: Project[] = [
     name: 'Desenvolvimento de Agente AI para Atendimento com Gemini',
     description: 'Criação de um chatbot avançado utilizando Google Gemini para automatizar o atendimento ao cliente de uma varejista, melhorando o tempo de resposta e a satisfação.',
     technologies: ['IA', 'Google Gemini', 'Chatbot', 'Genkit'],
-    image: 'https://placehold.co/600x400.png',
+    image: '/ai-agents3.png',
     dataAiHint: 'ai chatbot'
   },
   {
@@ -228,7 +228,7 @@ export const PROJECTS_DATA: Project[] = [
     name: 'Plataforma de Engenharia com Backstage',
     description: 'Desenvolvimento de uma plataforma de engenharia centralizada com Backstage, integrando Kubernetes, ArgoCD, Vault, pipelines CI/CD e outras ferramentas para otimizar o fluxo de desenvolvimento e operações.',
     technologies: ['Platform Engineering', 'Backstage', 'Kubernetes', 'ArgoCD', 'Vault', 'Pipelines CI/CD', 'DevOps'],
-    image: 'https://placehold.co/600x400.png',
+    image: '/platform.png',
     dataAiHint: 'developer portal'
   }
 ];

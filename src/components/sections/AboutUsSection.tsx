@@ -14,7 +14,7 @@ import {
 
 export function AboutUsSection() {
   return (
-    <SectionContainer className="bg-muted">
+    <SectionContainer id="about-us" className="bg-muted">
       <SectionTitle>{ABOUT_US_SECTION_TITLE}</SectionTitle>
       <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16 items-center">
         <div className="space-y-6 text-lg text-foreground">

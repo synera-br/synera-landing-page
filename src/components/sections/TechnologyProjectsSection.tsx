@@ -8,7 +8,7 @@ import { WhatsAppButton } from '../WhatsAppButton';
 
 export function TechnologyProjectsSection() {
   return (
-    <SectionContainer className="bg-muted">
+    <SectionContainer id="technology-projects" className="bg-muted">
       <SectionTitle description={PROJECTS_SECTION_DESCRIPTION}>
         {PROJECTS_SECTION_TITLE}
       </SectionTitle>

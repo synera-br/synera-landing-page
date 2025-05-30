@@ -9,7 +9,7 @@ import { ArrowRight } from 'lucide-react';
 
 export function ServicesOverviewSection() {
   return (
-    <SectionContainer>
+    <SectionContainer id="services-overview">
       <SectionTitle description={SERVICES_SECTION_DESCRIPTION}>
         {SERVICES_SECTION_TITLE}
       </SectionTitle>

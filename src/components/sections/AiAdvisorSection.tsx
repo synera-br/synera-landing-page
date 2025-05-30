@@ -55,7 +55,7 @@ export function AiAdvisorSection() {
   };
 
   return (
-    <SectionContainer>
+    <SectionContainer id="ai-advisor">
       <SectionTitle description={AI_ADVISOR_SECTION_DESCRIPTION}>
         {AI_ADVISOR_SECTION_TITLE}
       </SectionTitle>

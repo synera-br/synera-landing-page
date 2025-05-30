@@ -1,18 +1,27 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
+import { Button } from '@/components/ui/button';
 import { SectionContainer } from '@/components/SectionContainer';
 import { HERO_TITLE, HERO_SUBTITLE, HERO_IMAGE_URL, HERO_IMAGE_HINT } from '@/lib/constants';
 
+const sectionLinks = [
+  { href: '#services-overview', label: 'Nossos Serviços' },
+  { href: '#technology-projects', label: 'Projetos de Sucesso' },
+  { href: '#ai-advisor', label: 'Consultor IA' },
+  { href: '#about-us', label: 'Sobre Nós' },
+];
+
 export function HeroSection() {
   return (
-    <SectionContainer className="pt-0 pb-0 sm:pt-0 sm:pb-0 relative min-h-[calc(100vh-5rem)] flex items-center overflow-hidden bg-gradient-to-br from-background to-muted">
+    <SectionContainer className="pt-0 pb-0 sm:pt-0 sm:pb-0 relative min-h-[calc(100vh-5rem)] flex flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-background to-muted">
       <Image
         src={HERO_IMAGE_URL}
         alt="Synera Hero Background"
         layout="fill"
         objectFit="cover"
         quality={80}
-        className="opacity-50 z-0"
+        className="opacity-40 z-0" 
         data-ai-hint={HERO_IMAGE_HINT}
         priority
       />
@@ -27,6 +36,13 @@ export function HeroSection() {
           <WhatsAppButton size="lg" className="px-10 py-6 text-lg">
             Fale com um Especialista
           </WhatsAppButton>
+        </div>
+        <div className="mt-8 flex flex-wrap justify-center gap-x-4 gap-y-3">
+          {sectionLinks.map((link) => (
+            <Button key={link.href} asChild variant="outline" size="default" className="bg-background/70 hover:bg-background/90 backdrop-blur-sm">
+              <Link href={link.href}>{link.label}</Link>
+            </Button>
+          ))}
         </div>
       </div>
     </SectionContainer>
