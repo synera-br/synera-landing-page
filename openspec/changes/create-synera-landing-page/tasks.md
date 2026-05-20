@@ -27,6 +27,6 @@
 
 ## 5. Quality and Documentation Alignment
 
-- [ ] 5.1 Verify responsive behavior and readability across desktop and mobile for all sections
-- [ ] 5.2 Verify contact flow behavior for validation and successful WhatsApp redirection
+- [x] 5.1 Verify responsive behavior and readability across desktop and mobile for all sections
+- [x] 5.2 Verify contact flow behavior for validation and successful WhatsApp redirection
 - [x] 5.3 Update README and `project/docs/` where needed to match implemented behavior and deploy flow
