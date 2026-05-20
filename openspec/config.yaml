@@ -1,0 +1,19 @@
+schema: intent-driven
+
+context: |
+  We use conventional commits
+  Domain: Synera Consultoria em Tecnologia
+  Linear:
+    TEAM: Synera (SYN)
+    ProjectID: synera-landing-page-7434e1a7f33e
+    LINEAR_API_KEY: é uma variável de ambiente
+
+rules:
+  proposal:
+    - Must use grill-me skill
+  design:
+    - Must use c4-architecture skill
+  adr:
+    - Must use architecture-decision-records skill
+  spec:
+    - Must use gherkin-authoring skill
