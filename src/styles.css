@@ -1,15 +1,31 @@
 /* ── Design tokens ── */
 :root {
-  --brand-orange: #ef7d24;
+  /* Brand – orange (creativity) */
+  --brand-orange: #ef7d24;          /* backgrounds, large decorative elements */
+  --brand-orange-dark: #b85214;     /* text on white/light surfaces  ≥4.9:1 WCAG AA ✓ */
+  --brand-orange-alpha: rgba(239, 125, 36, 0.18);   /* subtle badge background */
+  --brand-orange-border: rgba(239, 125, 36, 0.40);  /* badge / accent border */
+
+  /* Brand – blue (trust) */
   --brand-blue: #165d96;
   --brand-blue-dark: #0f3f66;
   --brand-blue-mid: #2f89cc;
+  --brand-blue-alpha: rgba(22, 93, 150, 0.20);  /* focus ring, light tint */
+
+  /* Neutral surfaces */
   --base-gray-50: #f5f7f8;
   --base-gray-100: #edf1f4;
   --border-color: #dce3e8;
+
+  /* Typography */
   --ink: #1f2933;
   --ink-soft: #4a5568;
   --white: #ffffff;
+
+  /* Semantic */
+  --error: #b33421;                 /* validation errors on white ≥4.9:1 WCAG AA ✓ */
+
+  /* Layout */
   --header-height: 64px;
   --radius-sm: 8px;
   --radius-md: 12px;
@@ -46,6 +62,13 @@ body {
   background: var(--white);
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+}
+
+/* ── Global keyboard focus indicator ── */
+:focus-visible {
+  outline: 2px solid var(--brand-blue);
+  outline-offset: 3px;
+  border-radius: 3px;
 }
 
 /* ── Header ── */
@@ -104,7 +127,7 @@ body {
 }
 
 .top-nav ul a {
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(255, 255, 255, 0.88);
   text-decoration: none;
   padding: 0.4rem 0.8rem;
   border-radius: var(--radius-sm);
@@ -167,9 +190,11 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--brand-orange);
-  background: rgba(239, 125, 36, 0.15);
-  border: 1px solid rgba(239, 125, 36, 0.3);
+  /* white text on dark hero background: ≈9.3:1 WCAG AAA ✓  */
+  /* (orange text on this dark bg was ≈3.64:1 — below AA threshold) */
+  color: var(--white);
+  background: var(--brand-orange-alpha);
+  border: 1px solid var(--brand-orange-border);
   padding: 0.3rem 0.75rem;
   border-radius: 99px;
   margin-bottom: 1.25rem;
@@ -261,6 +286,16 @@ body {
   margin-bottom: 0.55rem;
 }
 
+.section-header h2::after {
+  content: "";
+  display: block;
+  width: 2rem;
+  height: 3px;
+  background: var(--brand-orange);
+  border-radius: 99px;
+  margin-top: 0.45rem;
+}
+
 .section-lead {
   font-size: clamp(0.925rem, 1.5vw, 1.025rem);
   color: var(--ink-soft);
@@ -292,6 +327,7 @@ body {
 .about-highlights li {
   background: var(--white);
   border: 1px solid var(--border-color);
+  border-left: 3px solid var(--brand-blue);
   border-radius: var(--radius-md);
   padding: 1rem 1.1rem;
   display: flex;
@@ -322,14 +358,16 @@ body {
 .card {
   background: var(--base-gray-50);
   border: 1px solid var(--border-color);
+  border-left: 3px solid var(--brand-blue-mid);
   border-radius: var(--radius-md);
   padding: 1.5rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-left-color 0.2s ease;
 }
 
 .card:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-md);
+  border-left-color: var(--brand-orange);
 }
 
 .card-icon {
@@ -449,7 +487,7 @@ input:focus,
 textarea:focus {
   outline: none;
   border-color: var(--brand-blue);
-  box-shadow: 0 0 0 3px rgba(22, 93, 150, 0.12);
+  box-shadow: 0 0 0 3px var(--brand-blue-alpha);
 }
 
 textarea {
@@ -457,7 +495,7 @@ textarea {
 }
 
 small {
-  color: #c0392b;
+  color: var(--error);
   font-size: 0.775rem;
 }
 
