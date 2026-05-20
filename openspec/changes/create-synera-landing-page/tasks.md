@@ -29,4 +29,4 @@
 
 - [ ] 5.1 Verify responsive behavior and readability across desktop and mobile for all sections
 - [ ] 5.2 Verify contact flow behavior for validation and successful WhatsApp redirection
-- [ ] 5.3 Update README and `project/docs/` where needed to match implemented behavior and deploy flow
+- [x] 5.3 Update README and `project/docs/` where needed to match implemented behavior and deploy flow

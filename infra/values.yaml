@@ -11,7 +11,7 @@ service:
   targetPort: 4173
 
 ingress:
-  enabled: true
+  enabled: false
   className: nginx
   annotations: {}
   hosts:
@@ -20,6 +20,14 @@ ingress:
         - path: /
           pathType: Prefix
   tls: []
+
+gateway:
+  enabled: true
+  parentRefs:
+    - name: envoy-gateway
+      namespace: envoy-gateway-system
+  hostnames:
+    - synera.local
 
 resources:
   requests:

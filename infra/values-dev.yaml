@@ -1,9 +1,6 @@
 image:
   tag: dev
 
-ingress:
-  hosts:
-    - host: dev.synera.local
-      paths:
-        - path: /
-          pathType: Prefix
+gateway:
+  hostnames:
+    - dev.synera.local
