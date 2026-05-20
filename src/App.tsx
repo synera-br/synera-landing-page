@@ -55,12 +55,20 @@ export function App() {
   const [form, setForm] = useState<ContactForm>(initialForm);
   const [errors, setErrors] = useState<Partial<ContactForm>>({});
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
 
   const whatsappHref = useMemo(() => {
     const phone = "5511999999999";
@@ -97,6 +105,18 @@ export function App() {
             <span className="brand-mark" aria-hidden="true">S</span>
             <span>Synera</span>
           </a>
+          <button
+            className={`menu-toggle${menuOpen ? " open" : ""}`}
+            type="button"
+            onClick={() => setMenuOpen((value) => !value)}
+            aria-label="Abrir menu"
+            aria-expanded={menuOpen}
+            aria-controls="mobile-nav"
+          >
+            <span />
+            <span />
+            <span />
+          </button>
           <ul>
             {navItems.map((item) => (
               <li key={item.id}>
@@ -106,6 +126,16 @@ export function App() {
           </ul>
           <a href="#contato" className="nav-cta">Fale conosco</a>
         </nav>
+        <div id="mobile-nav" className={`mobile-nav${menuOpen ? " open" : ""}`}>
+          {navItems.map((item) => (
+            <a key={item.id} href={`#${item.id}`} onClick={() => setMenuOpen(false)}>
+              {item.label}
+            </a>
+          ))}
+          <a href="#contato" className="mobile-nav-cta" onClick={() => setMenuOpen(false)}>
+            Fale conosco
+          </a>
+        </div>
       </header>
 
       <section className="hero">

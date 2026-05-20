@@ -126,6 +126,10 @@ body {
   margin-left: auto;
 }
 
+.menu-toggle {
+  display: none;
+}
+
 .top-nav ul a {
   color: rgba(255, 255, 255, 0.88);
   text-decoration: none;
@@ -151,6 +155,10 @@ body {
   font-size: 0.85rem;
   font-weight: 700;
   transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.mobile-nav {
+  display: none;
 }
 
 .nav-cta:hover {
@@ -596,6 +604,21 @@ button[type="submit"]:hover {
 
 /* ── Responsive: tablet/mobile ── */
 @media (max-width: 900px) {
+  :root {
+    --header-height: 60px;
+    --section-py: clamp(3rem, 8vw, 4rem);
+  }
+
+  .hero-actions {
+    width: 100%;
+  }
+
+  .hero-actions .btn-primary,
+  .hero-actions .btn-ghost {
+    flex: 1 1 220px;
+    text-align: center;
+  }
+
   .about-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -608,8 +631,67 @@ button[type="submit"]:hover {
 }
 
 @media (max-width: 800px) {
+  .menu-toggle {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    width: 38px;
+    height: 38px;
+    margin-left: auto;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    padding: 8px;
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    width: 100%;
+    height: 2px;
+    background: var(--white);
+    border-radius: 2px;
+  }
+
   .top-nav ul {
     display: none;
+  }
+
+  .nav-cta {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: grid;
+    gap: 0.5rem;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    background: var(--brand-blue-dark);
+    transition: max-height 0.25s ease, padding 0.25s ease;
+  }
+
+  .mobile-nav.open {
+    padding: 0.5rem var(--section-px) 1rem;
+    max-height: 280px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .mobile-nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 0.5rem 0;
+  }
+
+  .mobile-nav-cta {
+    display: inline-block;
+    margin-top: 0.25rem;
+    background: var(--brand-orange);
+    border-radius: var(--radius-sm);
+    text-align: center;
+    padding: 0.65rem 0.85rem !important;
+    font-weight: 700;
   }
 
   .top-nav {
@@ -628,6 +710,26 @@ button[type="submit"]:hover {
 }
 
 @media (max-width: 500px) {
+  :root {
+    --section-px: 1rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.75rem, 8.5vw, 2.1rem);
+  }
+
+  .hero-sub {
+    line-height: 1.6;
+  }
+
+  form {
+    padding: 1.2rem;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
   .about-highlights {
     grid-template-columns: 1fr;
   }
