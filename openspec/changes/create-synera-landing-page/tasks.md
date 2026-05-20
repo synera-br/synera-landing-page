@@ -23,7 +23,7 @@
 - [x] 4.1 Create Helm chart scaffold under `infra/` for the landing page workload
 - [x] 4.2 Add configurable values for image, service, and ingress without hardcoded environment data
 - [x] 4.3 Add environment override values files (at least dev and prod style)
-- [ ] 4.4 Validate chart rendering locally with Helm template for each values profile
+- [x] 4.4 Validate chart rendering locally with Helm template for each values profile
 
 ## 5. Quality and Documentation Alignment
 
