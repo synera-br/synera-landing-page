@@ -82,6 +82,12 @@ export function App() {
     return `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
   }, [form]);
 
+  const whatsappQuickHref = useMemo(() => {
+    const phone = "5511999999999";
+    const text = "Olá, equipe Synera! Quero falar sobre consultoria em plataforma e DevOps.";
+    return `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+  }, []);
+
   function validate() {
     const nextErrors: Partial<ContactForm> = {};
     if (!form.nome.trim()) nextErrors.nome = "Informe seu nome";
@@ -124,7 +130,9 @@ export function App() {
               </li>
             ))}
           </ul>
-          <a href="#contato" className="nav-cta">Fale conosco</a>
+          <a href={whatsappQuickHref} className="nav-cta" target="_blank" rel="noopener noreferrer">
+            Chamar no WhatsApp
+          </a>
         </nav>
         <div id="mobile-nav" className={`mobile-nav${menuOpen ? " open" : ""}`}>
           {navItems.map((item) => (
@@ -132,8 +140,14 @@ export function App() {
               {item.label}
             </a>
           ))}
-          <a href="#contato" className="mobile-nav-cta" onClick={() => setMenuOpen(false)}>
-            Fale conosco
+          <a
+            href={whatsappQuickHref}
+            className="mobile-nav-cta"
+            onClick={() => setMenuOpen(false)}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Chamar no WhatsApp
           </a>
         </div>
       </header>
@@ -147,7 +161,9 @@ export function App() {
             fluxos e evoluir com segurança rumo à maturidade cloud-native.
           </p>
           <div className="hero-actions">
-            <a href="#contato" className="btn-primary">Fale com a gente</a>
+            <a href={whatsappQuickHref} className="btn-primary" target="_blank" rel="noopener noreferrer">
+              Chamar no WhatsApp
+            </a>
             <a href="#servicos" className="btn-ghost">Ver serviços</a>
           </div>
         </div>
@@ -296,20 +312,33 @@ export function App() {
                   />
                   {errors.mensagem && <small>{errors.mensagem}</small>}
                 </label>
-                <button type="submit">Enviar via WhatsApp</button>
+                <button type="submit">Enviar mensagem no WhatsApp</button>
               </form>
 
-              <div className="chat-card">
-                <div className="chat-card-icon" aria-hidden="true">✦</div>
-                <h3>Fale com AI</h3>
-                <p>
-                  Explore um atendimento assistido por AI para conversar sobre
-                  desafios de plataforma, DevOps e modernização. Disponível a
-                  qualquer hora.
-                </p>
-                <a href="#" aria-label="Abrir chat com AI">
-                  Iniciar conversa com AI
-                </a>
+              <div className="contact-sidecards">
+                <div className="whatsapp-card">
+                  <div className="whatsapp-card-icon" aria-hidden="true">💬</div>
+                  <h3>WhatsApp direto</h3>
+                  <p>
+                    Quer resposta rápida? Fale agora com a Synera no WhatsApp e acelere
+                    a conversa sobre seu desafio.
+                  </p>
+                  <a href={whatsappQuickHref} target="_blank" rel="noopener noreferrer">
+                    Abrir WhatsApp agora
+                  </a>
+                </div>
+                <div className="chat-card">
+                  <div className="chat-card-icon" aria-hidden="true">✦</div>
+                  <h3>Fale com AI</h3>
+                  <p>
+                    Explore um atendimento assistido por AI para conversar sobre
+                    desafios de plataforma, DevOps e modernização. Disponível a
+                    qualquer hora.
+                  </p>
+                  <a href="#" aria-label="Abrir chat com AI">
+                    Iniciar conversa com AI
+                  </a>
+                </div>
               </div>
             </div>
           </div>
