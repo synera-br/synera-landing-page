@@ -18,5 +18,53 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: {{ .Values.service.targetPort }}
+          env:
+            - name: PORT
+              value: {{ .Values.service.targetPort | quote }}
+            {{- if .Values.mcp.secretName }}
+            - name: MCP_SERVER_URL
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.mcp.secretName }}
+                  key: MCP_SERVER_URL
+            - name: MCP_AUTH_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.mcp.secretName }}
+                  key: MCP_AUTH_TOKEN
+            {{- if .Values.mcp.model }}
+            - name: MCP_MODEL
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.mcp.secretName }}
+                  key: MCP_MODEL
+                  optional: true
+            {{- end }}
+            {{- if .Values.mcp.systemPrompt }}
+            - name: MCP_SYSTEM_PROMPT
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.mcp.secretName }}
+                  key: MCP_SYSTEM_PROMPT
+                  optional: true
+            {{- end }}
+            {{- else }}
+            {{- if .Values.mcp.serverUrl }}
+            - name: MCP_SERVER_URL
+              value: {{ .Values.mcp.serverUrl | quote }}
+            {{- end }}
+            {{- if .Values.mcp.authToken }}
+            - name: MCP_AUTH_TOKEN
+              value: {{ .Values.mcp.authToken | quote }}
+            {{- end }}
+            {{- if .Values.mcp.model }}
+            - name: MCP_MODEL
+              value: {{ .Values.mcp.model | quote }}
+            {{- end }}
+            {{- if .Values.mcp.systemPrompt }}
+            - name: MCP_SYSTEM_PROMPT
+              value: {{ .Values.mcp.systemPrompt | quote }}
+            {{- end }}
+            {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
