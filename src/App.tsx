@@ -1,4 +1,5 @@
-import { FormEvent, useEffect, useMemo, useState } from "react";
+import { FormEvent, useCallback, useEffect, useMemo, useState } from "react";
+import { ChatBot } from "./components/ChatBot";
 
 type ContactForm = {
   nome: string;
@@ -56,6 +57,8 @@ export function App() {
   const [errors, setErrors] = useState<Partial<ContactForm>>({});
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [chatOpen, setChatOpen] = useState(false);
+  const handleChatClose = useCallback(() => setChatOpen(false), []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -331,13 +334,18 @@ export function App() {
                   <div className="chat-card-icon" aria-hidden="true">✦</div>
                   <h3>Fale com AI</h3>
                   <p>
-                    Explore um atendimento assistido por AI para conversar sobre
-                    desafios de plataforma, DevOps e modernização. Disponível a
-                    qualquer hora.
+                    Converse agora com nosso assistente AI sobre desafios de
+                    plataforma, Kubernetes, DevOps e modernização. Atendimento
+                    imediato, 24 horas.
                   </p>
-                  <a href="#" aria-label="Abrir chat com AI">
-                    Iniciar conversa com AI
-                  </a>
+                  <button
+                    type="button"
+                    className="chat-card-btn"
+                    onClick={() => setChatOpen(true)}
+                    aria-label="Abrir chat com assistente AI da Synera"
+                  >
+                    ✦ Iniciar conversa com AI
+                  </button>
                 </div>
               </div>
             </div>
@@ -354,6 +362,8 @@ export function App() {
           </p>
         </div>
       </footer>
+
+      <ChatBot isOpen={chatOpen} onClose={handleChatClose} />
     </div>
   );
 }

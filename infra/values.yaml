@@ -8,7 +8,7 @@ image:
 service:
   type: ClusterIP
   port: 80
-  targetPort: 4173
+  targetPort: 3000
 
 ingress:
   enabled: false
@@ -28,6 +28,18 @@ gateway:
       namespace: envoy-gateway-system
   hostnames:
     - synera.local
+
+# MCP chatbot configuration
+# Reference an existing Kubernetes Secret that holds MCP credentials.
+# The Secret must contain keys: MCP_SERVER_URL and MCP_AUTH_TOKEN.
+# Optional keys: MCP_MODEL, MCP_SYSTEM_PROMPT, PORT
+mcp:
+  secretName: ""   # e.g. synera-mcp-credentials
+  # Direct env var values (ignored when secretName is set)
+  serverUrl: ""
+  authToken: ""
+  model: ""
+  systemPrompt: ""
 
 resources:
   requests:

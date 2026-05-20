@@ -6,12 +6,22 @@ COPY package.json package-lock.json ./
 RUN npm ci
 
 COPY . .
-RUN npm run build
 
-FROM nginx:1.27-alpine
+RUN npm run build && npm run build:server
 
-COPY --from=builder /app/dist /usr/share/nginx/html
+# ── Production image ──
+FROM node:20-alpine
 
-EXPOSE 80
+WORKDIR /app
 
-CMD ["nginx", "-g", "daemon off;"]
+# Only production dependencies needed (express is a runtime dep)
+COPY package.json package-lock.json ./
+RUN npm ci --omit=dev
+
+# Copy built artifacts
+COPY --from=builder /app/dist        ./dist
+COPY --from=builder /app/dist-server ./dist-server
+
+EXPOSE 3000
+
+CMD ["node", "dist-server/index.js"]
