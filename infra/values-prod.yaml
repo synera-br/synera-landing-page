@@ -1,0 +1,11 @@
+replicaCount: 2
+
+image:
+  tag: stable
+
+ingress:
+  hosts:
+    - host: synera.com.br
+      paths:
+        - path: /
+          pathType: Prefix

@@ -1,0 +1,142 @@
+:root {
+  --brand-orange: #ef7d24;
+  --brand-blue: #165d96;
+  --base-gray-50: #f5f7f8;
+  --ink: #1f2933;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: linear-gradient(180deg, #fff 0%, var(--base-gray-50) 100%);
+}
+
+.hero {
+  background: radial-gradient(circle at top right, #2f89cc 0%, #0f3f66 55%);
+  color: var(--white);
+  padding: 1.25rem clamp(1rem, 4vw, 4rem) 3rem;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.top-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.top-nav a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.hero-content h1 {
+  margin-top: 0.5rem;
+  max-width: 24ch;
+}
+
+.section {
+  padding: 3rem clamp(1rem, 4vw, 4rem);
+}
+
+.section.alt {
+  background: var(--white);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.cards article,
+.chat-card,
+form {
+  background: var(--white);
+  border: 1px solid #dce3e8;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 1rem;
+}
+
+form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 0.75rem;
+}
+
+input,
+textarea,
+button,
+.chat-card a {
+  font: inherit;
+}
+
+input,
+textarea {
+  border: 1px solid #ccd5dd;
+  border-radius: 8px;
+  padding: 0.6rem;
+}
+
+small {
+  color: #a41414;
+}
+
+button,
+.chat-card a {
+  background: var(--brand-orange);
+  color: var(--white);
+  border: 0;
+  border-radius: 8px;
+  padding: 0.7rem 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+}
+
+@media (max-width: 800px) {
+  .top-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .top-nav ul {
+    flex-wrap: wrap;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+}
