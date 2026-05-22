@@ -551,11 +551,63 @@ body {
   line-height: 1.4;
 }
 
-/* ── Serviços: cards ── */
+/* ── Serviços: cards e grupos ── */
+.services-groups {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.service-group {
+  background: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.service-group.featured {
+  border-color: rgba(239, 125, 36, 0.45);
+  box-shadow: var(--shadow-sm);
+}
+
+.service-group-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  align-items: center;
+}
+
+.service-group-header h3 {
+  font-size: 1.2rem;
+  color: var(--brand-blue-dark);
+}
+
+.service-group-header p {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  flex: 1;
+  min-width: 240px;
+}
+
+.group-cta {
+  color: var(--white);
+  background: var(--brand-blue);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.8rem;
+  border-radius: 999px;
+  padding: 0.45rem 0.85rem;
+}
+
+.service-group.featured .group-cta {
+  background: var(--brand-orange);
+}
+
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
 }
 
 .card {
@@ -563,7 +615,7 @@ body {
   border: 1px solid var(--border-color);
   border-top: 3px solid var(--brand-blue-mid);
   border-radius: var(--radius-md);
-  padding: 1.75rem 1.5rem;
+  padding: 1.25rem;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-top-color 0.2s ease;
   display: flex;
   flex-direction: column;
@@ -576,26 +628,9 @@ body {
   border-top-color: var(--brand-orange);
 }
 
-.card-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  background: var(--brand-blue-alpha);
-  border-radius: var(--radius-sm);
-  color: var(--brand-blue);
-  flex-shrink: 0;
-}
-
-.card-icon svg {
-  width: 22px;
-  height: 22px;
-}
-
-.card h3 {
-  font-size: 1rem;
-  font-weight: 700;
+.card h4 {
+  font-size: 0.98rem;
+  font-weight: 750;
   color: var(--ink);
   line-height: 1.35;
 }

@@ -22,80 +22,74 @@ const navItems = [
   { id: "contato", label: "Contato" }
 ];
 
-const services = [
+const serviceGroups = [
   {
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden="true">
-        <circle cx="12" cy="12" r="3" />
-        <path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12" />
-      </svg>
-    ),
-    title: "Kubernetes & Platform Engineering",
-    description:
-      "Arquitetura e operação de clusters, desenvolvimento de operadores Kubernetes e IDP com Backstage. Do bare-metal à produção multi-cloud com práticas de Platform Engineering.",
-    tags: ["Kubernetes", "Operators", "Backstage", "IDP"]
+    category: "Destaques estratégicos",
+    description: "Frentes de alto impacto para reduzir risco operacional e acelerar entregas.",
+    cta: "Quero priorizar essas frentes",
+    items: [
+      {
+        title: "Kubernetes e Cloud Native",
+        summary:
+          "Problema: clusters frágeis e baixa previsibilidade. Abordagem: arquitetura, governança e operação com SRE. Resultado: plataforma resiliente, segura e pronta para escala.",
+        tags: ["Kubernetes", "SRE", "Governança"]
+      },
+      {
+        title: "Pipelines e CI/CD",
+        summary:
+          "Problema: deploy lento e sujeito a erro manual. Abordagem: padronização de pipelines e qualidade embutida. Resultado: lead time menor e releases mais confiáveis.",
+        tags: ["GitHub Actions", "Azure DevOps", "Quality Gates"]
+      },
+      {
+        title: "GitOps e Orquestração",
+        summary:
+          "Problema: mudanças sem rastreabilidade e rollback complexo. Abordagem: ArgoCD, Argo Workflows e Temporal.io. Resultado: entrega auditável e reversão segura.",
+        tags: ["ArgoCD", "Argo Workflows", "Temporal.io"]
+      }
+    ]
   },
   {
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden="true">
-        <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
-        <polyline points="16 7 22 7 22 13" />
-      </svg>
-    ),
-    title: "Pipelines & GitOps",
-    description:
-      "CD com ArgoCD, CI com GitHub Actions e Azure DevOps, orquestração com Argo Workflows e Temporal.io. Entregas contínuas com rastreabilidade e reversão segura.",
-    tags: ["ArgoCD", "GitHub Actions", "Azure DevOps", "Temporal.io"]
-  },
-  {
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden="true">
-        <rect x="2" y="3" width="20" height="14" rx="2" />
-        <path d="M8 21h8M12 17v4" />
-        <path d="M7 8l3 3-3 3M13 14h4" />
-      </svg>
-    ),
-    title: "Infraestrutura como Código",
-    description:
-      "Provisionamento e gestão de infraestrutura com Ansible, Terraform e Crossplane. Consistência entre ambientes, rastreabilidade e evolução controlada.",
-    tags: ["Ansible", "Terraform", "Crossplane"]
-  },
-  {
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden="true">
-        <polyline points="16 18 22 12 16 6" />
-        <polyline points="8 6 2 12 8 18" />
-      </svg>
-    ),
-    title: "Desenvolvimento Golang",
-    description:
-      "Desenvolvimento de ferramentas, APIs, CLIs e operadores Kubernetes em Go. Código idiomático, testável e pensado para a cultura cloud-native.",
-    tags: ["Go", "CLIs", "APIs REST", "Operators"]
-  },
-  {
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden="true">
-        <path d="M12 2a7 7 0 0 1 7 7c0 4.17-3.5 7.5-7 10-3.5-2.5-7-5.83-7-10a7 7 0 0 1 7-7z" />
-        <circle cx="12" cy="9" r="2.5" />
-      </svg>
-    ),
-    title: "AI Enablement",
-    description:
-      "Apoio para criar e evoluir stacks de desenvolvimento com AI: treinamentos, integrações e acompanhamento contínuo para adoção de LLMs no ciclo de engenharia.",
-    tags: ["LLMs", "AI Stack", "Integração", "Tooling"]
-  },
-  {
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden="true">
-        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-        <circle cx="9" cy="7" r="4" />
-        <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
-      </svg>
-    ),
-    title: "Consultoria DevOps",
-    description:
-      "Diagnóstico, estratégia e evolução de maturidade DevOps. Acompanhamento próximo para transformar cultura, processos e ferramentas com foco em resultado tangível.",
-    tags: ["DevOps", "Cultura", "Maturidade", "Estratégia"]
+    category: "Portfólio completo",
+    description: "Serviços complementares para evoluir arquitetura, times e velocidade de negócio.",
+    cta: "Mapear serviço ideal",
+    items: [
+      {
+        title: "Automação e IaC",
+        summary:
+          "Problema: ambientes inconsistentes e retrabalho recorrente. Abordagem: Ansible, Terraform e Crossplane com versionamento. Resultado: infraestrutura reprodutível e governável.",
+        tags: ["Ansible", "Terraform", "Crossplane"]
+      },
+      {
+        title: "Platform Engineering e IDP",
+        summary:
+          "Problema: dependência de especialistas para tarefas simples. Abordagem: IDP com Backstage e fluxos self-service. Resultado: autonomia com padrões de engenharia.",
+        tags: ["Backstage", "IDP", "Self-service"]
+      },
+      {
+        title: "Desenvolvimento Golang",
+        summary:
+          "Problema: falta de ferramentas internas para escalar operação. Abordagem: APIs, CLIs e operadores em Go com boas práticas. Resultado: produtividade e robustez cloud-native.",
+        tags: ["Go", "APIs", "CLIs", "Operators"]
+      },
+      {
+        title: "Consultoria DevOps e Platform",
+        summary:
+          "Problema: iniciativas isoladas sem ganho sistêmico. Abordagem: diagnóstico, roadmap e execução junto ao time. Resultado: maturidade contínua e impacto mensurável.",
+        tags: ["DevOps", "Roadmap", "Maturidade"]
+      },
+      {
+        title: "Treinamentos in-company",
+        summary:
+          "Problema: lacunas técnicas travando evolução da plataforma. Abordagem: trilhas práticas alinhadas ao contexto real. Resultado: equipe preparada para operar e evoluir sem dependência.",
+        tags: ["Hands-on", "Mentoria", "Capacitação"]
+      },
+      {
+        title: "Consultoria para stack com AI",
+        summary:
+          "Problema: adoção de AI sem estratégia técnica. Abordagem: desenho de stack, integrações e governança de uso. Resultado: ganho real de produtividade com segurança.",
+        tags: ["LLMs", "AI Stack", "Integração"]
+      }
+    ]
   }
 ];
 
@@ -385,22 +379,32 @@ export function App() {
             <div className="section-header">
               <h2>Serviços</h2>
               <p className="section-lead">
-                Soluções especializadas para acelerar sua jornada cloud-native e elevar a
-                maturidade de engenharia do seu time.
+                Portfólio completo organizado por prioridade para facilitar a leitura técnica e
+                orientar a conversa comercial desde o primeiro contato.
               </p>
             </div>
-            <div className="cards">
-              {services.map((s) => (
-                <article key={s.title} className="card">
-                  <span className="card-icon">{s.icon}</span>
-                  <h3>{s.title}</h3>
-                  <p>{s.description}</p>
-                  <ul className="card-tags" aria-label={`Tecnologias de ${s.title}`}>
-                    {s.tags.map((tag) => (
-                      <li key={tag}>{tag}</li>
+            <div className="services-groups">
+              {serviceGroups.map((group, index) => (
+                <section key={group.category} className={`service-group${index === 0 ? " featured" : ""}`}>
+                  <div className="service-group-header">
+                    <h3>{group.category}</h3>
+                    <p>{group.description}</p>
+                    <a href="#contato" className="group-cta">{group.cta}</a>
+                  </div>
+                  <div className="cards">
+                    {group.items.map((service) => (
+                      <article key={service.title} className="card">
+                        <h4>{service.title}</h4>
+                        <p>{service.summary}</p>
+                        <ul className="card-tags" aria-label={`Foco de ${service.title}`}>
+                          {service.tags.map((tag) => (
+                            <li key={tag}>{tag}</li>
+                          ))}
+                        </ul>
+                      </article>
                     ))}
-                  </ul>
-                </article>
+                  </div>
+                </section>
               ))}
             </div>
           </div>
