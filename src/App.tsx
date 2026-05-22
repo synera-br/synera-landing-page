@@ -118,7 +118,7 @@ export function App() {
             className={`menu-toggle${menuOpen ? " open" : ""}`}
             type="button"
             onClick={() => setMenuOpen((value) => !value)}
-            aria-label="Abrir menu"
+            aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
             aria-expanded={menuOpen}
             aria-controls="mobile-nav"
           >

@@ -754,6 +754,20 @@ button[type="submit"]:hover {
     gap: 0.75rem;
   }
 
+  .top-nav ul a,
+  .mobile-nav a,
+  .nav-cta,
+  .mobile-nav-cta,
+  .chat-card-btn,
+  .btn-primary,
+  .btn-ghost,
+  button[type="submit"] {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .contact-layout {
     grid-template-columns: 1fr;
   }
